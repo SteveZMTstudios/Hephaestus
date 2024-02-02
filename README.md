@@ -7,7 +7,7 @@ A tool that make repairing school teaching computer easier.
 # Progress 开发进度
 - [x] 新建文件夹
 - [ ] 规划设计
-- [ ] 底层winpe调试
+- [ ] 底层winpe调试 
 - [ ] 配置内网集控
 - [ ] 简化安装流程
 - [ ] 实现无间断安装
