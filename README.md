@@ -6,14 +6,16 @@ A tool that make repairing school teaching computer easier.
 
 # Progress 开发进度
 - [x] 新建文件夹
-- [ ] 规划设计
-- [ ] 底层winpe调试 
+- [x] 规划设计
+- [ ] 脚本实现 35%
+- [x] 底层winpe调试 
+- [ ] 实现预先安装（捆绑）
 - [ ] 配置内网集控
 - [ ] 简化安装流程
-- [ ] 实现无间断安装
+- [x] 实现无间断安装
 - [ ] 配置活动程序
-- [ ] 优化系统镜像获取
-- [ ] 处理安装更新
+- [ ] 优化系统镜像获取<br>
+~~ - [ ] 处理安装更新 ~~
 - [ ] 打包闭源软件
 - [ ] 最终调试
 - [ ] 创建第一个release
@@ -37,13 +39,5 @@ A tool that make repairing school teaching computer easier.
 23年11月，我们学校教室的希沃一体机出现了大量的死机和不开机问题，当时网管真忙不过来，于是部分班主任求助于S同学和我。这一过程非常的无聊和繁琐，并且耽误上课进度，部分班因为使用希沃自带恢复操作系统工具而导致了严重的教学事故，故计划编写此程序。
 
 # Contributions 参考的来源
-
-[暂缺，因为还没开始]
-
-
-
-
-
-
-
+WinPE镜像：[**此作品修改自Edgeless Powered by Cnotech**](https://home.edgeless.top/) <-点击访问原始项目的主页
 

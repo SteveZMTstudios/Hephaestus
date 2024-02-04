@@ -1,3 +1,9 @@
 [submodule "installer/USB-Drive/ventoy"]
 	path = installer/USB-Drive/ventoy
 	url = https://github.com/ventoy/Ventoy.git
+[submodule "winpe/source"]
+	path = winpe/source
+	url = https://github.com/EdgelessPE/Edgeless.git
+[submodule "compile/wimtool"]
+	path = compile/wimtool
+	url = https://github.com/hsehestedt/WIM-Tools.git
