@@ -15,7 +15,8 @@ A tool that make repairing school teaching computer easier.
 - [x] 实现无间断安装
 - [ ] 配置活动程序
 - [ ] 优化系统镜像获取<br>
-~~ - [ ] 处理安装更新 ~~
+- [ ] 编写wiki
+- [ ] ~~ 处理安装更新 ~~
 - [ ] 打包闭源软件
 - [ ] 最终调试
 - [ ] 创建第一个release
