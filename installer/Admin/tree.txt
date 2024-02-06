@@ -1,0 +1,9 @@
+AdminInstaller:(pkglist)
+-[source]
+|-7z-zsd addons
+
+-cci
+-cui
+-gcj
+-output.json(generated)
+-sc

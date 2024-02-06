@@ -1,3 +1,5 @@
 winpe/realsource/
 winpe/compiled/
 compile/closesource-program/
+installer/compile/
+installer/Admin/compile/

@@ -7,3 +7,6 @@
 [submodule "compile/wimtool"]
 	path = compile/wimtool
 	url = https://github.com/hsehestedt/WIM-Tools.git
+[submodule "installer/Admin/7z-zstd"]
+	path = installer/Admin/7z-zstd
+	url = https://github.com/mcmilk/7-Zip-zstd.git
