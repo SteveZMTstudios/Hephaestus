@@ -8,7 +8,7 @@ A tool that make repairing school teaching computer easier.
 - [x] 新建文件夹 ✔
 - [x] 规划设计 ✔
 - [ ] 脚本实现 68%
-- [ ] usb安装器实现 92%
+- [ ] usb安装器实现 99%
 - [ ] 教室程序安装器 
 - [x] 底层winpe调试 ✔
 - [ ] 实现预先安装（捆绑）
