@@ -62,7 +62,9 @@ def main():
             adprint("复制失败！",11)
             adprint("参考上方报错，检查系统状态，或者重装此电脑，或者硬盘寿命已尽。",9)
             adprint("程序将立刻终止。")
-        if rcmd("cp /v"+detect+" "+detectLocation()+"\\") !=0:#拷贝
+            print("wtf _HBBDKJSB_DEBUG_FLAG")
+            return 1
+        if rcmd("copy /v "+detect+" "+detectLocation()+"\\") !=0:#拷贝
             #copy failed
             adprint("复制失败！",11)
             adprint("参考上方报错，检查系统状态，或者重装此电脑，或者硬盘寿命已尽。",9)
@@ -107,8 +109,10 @@ def main():
             #mkdir system command fail
             adprint("创建文件夹失败！",11)
             adprint("复制失败！",11)
+            print("wtf _JOISJI_FLAG_DEBUG")
             adprint("参考上方报错，检查系统状态，或者重装此电脑，或者硬盘寿命已尽。",9)
             adprint("程序将立刻终止。")
+            return 1
         if rcmd(detectLocation()+"\\source\\7z.exe x "+detectLocation()+"\\ventoy-1.0.97-windows.zip -o"+detectLocation()+"\\program\\ventoy\\") !=0:
             #unzip fail
             adprint("无法解压！",1)
@@ -120,23 +124,23 @@ def main():
     else:
         adprint("不合法的输入。执行默认操作：退出")
         return 0
+    rcmd("cls")
     print("现在将打开ventoy安装程序，请按照界面指示插入一张空白U盘，然后按提示点击“安装”。")
-    #pass #breakpoint
+    pass #breakpoint
     items = os.listdir(detectLocation()+"\\program\\ventoy\\")
     folders = [item for item in items if os.path.isdir(item)]
-    for folder in folders:
-        tfolder=folder
-    ventoy_location=detectLocation()+"\\program\\ventoy\\"+tfolder+"\\Ventoy2Disk.exe"
+    
+    ventoy_location=detectLocation()+"\\program\\ventoy\\"+items[0]+"\\Ventoy2Disk.exe"
     if rcmd(ventoy_location) !=0:
         adprint("打开失败！",11)
-        rcmd("del /q "+detectLocation()+"\\program\\ventoy")
+        rcmd("rmdir /q "+detectLocation()+"\\program\\ventoy")
     adprint("完成安装后，按下任意键继续，但不要按显示屏上的按钮、键盘上的大小写切换或ctrl,win,shift键，也不是鼠标，更不是主机电源键！",22)
     # 因为内部测试有一堆人按奇奇怪怪的键然后告诉我没用，我真的 服~了QAQ
     confirm()
-    rcmd("del /q "+detectLocation()+"\\program\\ventoy")
+    rcmd("rmdir /s /q "+detectLocation()+"\\program\\ventoy")
     detect=None
     '''
-    下面就是繁琐无谓的拷贝edgeless基础包了！好耶！
+    下面就是繁琐无谓的拷贝edgeless基础包了！好耶！1
     '''
     '''
     adprint("现在，请输入制作好usb引导的盘符，已经检测到的外置usb为"+detectUsbPath(),22)
@@ -145,7 +149,8 @@ def main():
     '''
     #detect=input()
     usb_path=""
-    while usb_path != "":
+    while usb_path == "":
+        rcmd("cls")
         adprint("现在，请输入制作好usb引导的盘符，已经检测到的外置usb为"+detectUsbPath(),22)
         adprint("Hint:制作好的U盘卷标名应该叫Ventoy",33)
         print("输入样例： H: ")
@@ -155,6 +160,7 @@ def main():
             adprint("未输入任何值！确认"+detectUsbPath()+"就是制作好的U盘吗？",4)
             detect2=input("[1]是这样的 [2]不是这样")
             if detect2=="1":
+                
                 usb_path=detectUsbPath()
             elif detect2=="2":
                 rcmd("cls")
@@ -180,6 +186,17 @@ def main():
             else:
                 continue
     adprint("现在，请务必保持usb正常连接...",4)
+    if rcmd(detectLocation()+"\\source\\7z.exe x "+detectLocation()+"\\source\\compiled.7z -o"+usb_path) !=0:
+            #unzip fail
+            adprint("无法解压！",1)
+            print("ErrorLoc:LOCAL_SOURCE_UNZIP_FAIL")
+            adprint("请检查您的系统环境是否异常并尝试重新通过安装向导或附带的光盘进行安装，或将其反馈给开发者，记得包括系统的详细信息。",3)
+            return 1
+    rcmd("cls")
+    adprint("成功安装！",3)
+    print("Hephaestus OS 已经成功安装到你的U盘上。\n现在，将其插入关机的计算机上，然后在计算机启动时不断按下 F12 或 F7，选择USB启动即可打开Hephaestus OS。")
+    confirm()
+    return 0 
     
 
 
@@ -271,7 +288,9 @@ def detectUsbPath():
     '''
 
 
-def rcmd(cmd:str):
+def rcmd(cmd:str,debug=0):
+    if debug != 0:
+        print(cmd)
     ErrorCode=os.system(cmd)
     if ErrorCode != 0:
         adprint("执行语句"+cmd+"时发生了错误，",1)
@@ -338,3 +357,4 @@ if __name__ == "__main__" :
     if main() != 0:
 #        raise Exception("An error occured.")
         confirm()
+    rcmd("rmdir /s /q "+detectLocation()+"\\program\\")

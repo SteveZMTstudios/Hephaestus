@@ -4,3 +4,6 @@ compile/closesource-program/
 installer/compile/
 installer/Admin/compile/
 winpe/package/csource
+installer/Admin/source/compiled.7z
+*.exe
+installer/Admin/source/compiled.7z

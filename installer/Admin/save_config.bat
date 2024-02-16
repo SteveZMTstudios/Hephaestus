@@ -34,12 +34,10 @@ pause
 set JSON_CONTENT=%JSON_TEMPLATE:*%IP%=%
 
 
-
-rem 等待用户输入
 echo 请确认是否要执行后续操作（输入'yes'继续）：
 pause
 
-rem 检查用户输入
+
 if /i "%errorlevel%"=="1" (
     rem 用户输入了'yes'，创建并保存JSON文件
 
