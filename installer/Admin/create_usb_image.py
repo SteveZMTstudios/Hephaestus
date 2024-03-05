@@ -144,7 +144,7 @@ def main():
         adprint("不合法的输入。执行默认操作：退出")
         return 0
     rcmd("cls")
-    print("现在将打开ventoy安装程序，请按照界面指示插入一张空白U盘，然后按提示点击“安装”。")
+    print("现在将打开ventoy安装程序，请按照界面指示插入一张至少约为8GB的空白U盘，然后按提示点击“安装”。\n安装完成后，关闭 Ventoy 安装程序 来继续。")
     pass  # breakpoint
     items = os.listdir(detectLocation() + "\\program\\ventoy\\")
     folders = [item for item in items if os.path.isdir(item)]
@@ -164,7 +164,7 @@ def main():
     下面就是繁琐无谓的拷贝edgeless基础包了！好耶！1
     '''
     '''
-    adprint("现在，请输入制作好usb引导的盘符，已经检测到的外置usb为"+detectUsbPath(),22)
+    adprint("现在，请输入制作好usb引导的盘符，已经检测到的外置usb为 [ "+detectUsbPath(),22)
     adprint("Hint:制作好的U盘卷标名应该叫Ventoy",33)
     print("输入样例： H: ")
     '''
@@ -174,9 +174,12 @@ def main():
         rcmd("cls")
         if detectUsbPath() == None:
             adprint("出现错误！ 检测USB盘符时出现问题。")
-        adprint("现在，请输入制作好usb引导的盘符，已经检测到的外置usb为" + detectUsbPath(), 22)
+            print("请插入已经制作好的U盘到计算机上，完成后按Enter键。\n"+"如果您没有制作好Ventoy引导U盘，请关闭程序，然后重新打开，重做以上的安装步骤。")
+            rcmd("pause")
+            continue
+        adprint("现在，请输入制作好usb引导的盘符，已经检测到的外置usb为 [ " + detectUsbPath()+" ]", 22)
         adprint("Hint:制作好的U盘卷标名应该叫Ventoy", 33)
-        print("输入样例： H: ")
+        print("输入样例：  "+detectUsbPath())
         detect = input()
         usb_path = ""
         if detect == "":
@@ -213,6 +216,7 @@ def main():
             else:
                 continue
     adprint("现在，请务必保持usb正常连接...", 4)
+    adprint("此过程可能需要一段时间，感谢您的耐心等待。", 33)
     if rcmd(detectLocation() + "\\source\\7z.exe x " + detectLocation() + "\\source\\compiled.7z -o" + usb_path) != 0:
         # unzip fail
         adprint("无法解压！", 1)

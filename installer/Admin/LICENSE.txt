@@ -1,3 +1,8 @@
+Hephaestus OS and its installer is distributed under the MPL v2 General Public License. Be sure to read it before using this program.
+
+Hephaestus OS 及其安装程序均基于 MPL v2 协议开发，请确保在使用此程序之前阅读此开源协议。
+
+
 Mozilla Public License Version 2.0
 ==================================
 
@@ -371,3 +376,5 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
 
   This Source Code Form is "Incompatible With Secondary Licenses", as
   defined by the Mozilla Public License, v. 2.0.
+
+

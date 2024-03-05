@@ -13,7 +13,7 @@ def main():
     while 1:
         adprint("您确实想要从您的USB驱动器中移除Hephaestus OS，及其附属的组件？",4)
 
-        detect=input("[1]只移除Hephaestus OS,保留USB中的其他数据 [0]退出")
+        detect=input("[1]只移除Hephaestus OS,保留USB中的其他数据 [0]退出\n键入选项对应的数字，按Enter确认。\n>")
         if detect =="1":
             rcmd("cls")
             print("以下文件将被移除：\n    驱动器\\\\Hephaestus_OS.wim\n    驱动器\\\\Edgeless\n")
