@@ -28,7 +28,7 @@ int main() {
 	system("color 9f");
 	cout << "Installing environment, Please wait for a sec...\n";
 
-	int result = system("pip install colorama -i https://pypi.tuna.tsinghua.edu.cn/simple");//install extra package
+	int result = system("pip install colorama requests tqdm -i https://pypi.tuna.tsinghua.edu.cn/simple");//install extra package
 	/*
 	if (result == 1 )  {
 		cout << "Python environment wasn not detected, Please Install Python 3+ First! " << endl;

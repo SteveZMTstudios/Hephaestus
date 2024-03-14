@@ -1,10 +1,9 @@
 import webbrowser  # internal module
-import os, sys
+import os,sys
 from colorama import init, Fore
 import subprocess
 import re
-import requests
-from tqdm import tqdm
+
 
 init(autoreset=True)
 
@@ -105,7 +104,6 @@ def main():
         # rcmd("cd "+detectLocation())
         if detectExist(detectLocation() + "\\source\\7z.exe") == 1:  # 查工具
             # unzip tool lost
-            print(detectLocation() + "\\source\\7z.exe")
             adprint("安装不完全！未能找到.\\source\\7z.exe\n正在重试...")
             if detectExist(".\\source\\7z.exe") == 1:
                 adprint("仍然失败... :(")
@@ -146,8 +144,7 @@ def main():
         adprint("不合法的输入。执行默认操作：退出")
         return 0
     rcmd("cls")
-    print(
-        "现在将打开ventoy安装程序，请按照界面指示插入一张至少约为8GB的空白U盘，然后按提示点击“安装”。\n安装完成后，关闭 Ventoy 安装程序 来继续。")
+    print("现在将打开ventoy安装程序，请按照界面指示插入一张至少约为8GB的空白U盘，然后按提示点击“安装”。\n安装完成后，关闭 Ventoy 安装程序 来继续。")
     pass  # breakpoint
     items = os.listdir(detectLocation() + "\\program\\ventoy\\")
     folders = [item for item in items if os.path.isdir(item)]
@@ -163,51 +160,6 @@ def main():
     confirm()
     rcmd("rmdir /s /q " + detectLocation() + "\\program\\ventoy")
     detect = None
-    # 下载包
-    dl_require = True
-    # test link
-    while dl_require:
-        if detectExist(detectLocation() + "\\source\\compiled.7z") == 1:
-            headers = {"Content-Type": "application/json"}
-            print("检查链接畅通...")
-            for url_test in ["https://mirror.ghproxy.com/", "https://gh.api.99988866.xyz/",
-                             "https://github.moeyy.xyz/","https://github.com"]:
-                print(url_test)
-                res = requests.get(url=url_test, headers=headers)
-
-                if res.status_code == 200:
-                    if url_test == "https://github.com":
-                        url_test = ""
-                    url = url_test + "https://github.com/SteveZMTstudios/Hephaestus/releases/download/v1.4_beta/compiled.7z"
-                    break
-            else:
-                adprint("所有的下载链接都无效！", 4)
-                print("请自行打开浏览器下载compiled.7z文件，并将它放在", detectLocation() + "\\source\\compiled.7z",
-                      "目录下，然后重新打开程序！")
-                print("下载位置：https://github.com/SteveZMTstudios/Hephaestus/releases/download/v1.4_beta/compiled.7z")
-                print("下载镜像1: https://www.123pan.com/s/OS4KVv-operv.html")
-                rcmd("pause")
-                return 0
-
-            file_path = detectLocation() + "\\source\\compiled.7z"
-
-            response = requests.get(url, stream=True)
-            adprint("正在下载文件，这可能需要一段时间...", 3)
-            total_size = int(response.headers.get("content-length"))
-            block_size = 1024
-            progress_bar = tqdm(total=total_size, unit="B", unit_scale=True)
-
-            with open(file_path, "wb") as f:
-                for data in response.iter_content(block_size):
-                    progress_bar.update(len(data))
-                    f.write(data)
-
-            progress_bar.close()
-            print("文件下载完成")
-        else:
-            dl_require = False
-            break
-
     '''
     下面就是繁琐无谓的拷贝edgeless基础包了！好耶！1
     '''
@@ -222,13 +174,12 @@ def main():
         rcmd("cls")
         if detectUsbPath() == None:
             adprint("出现错误！ 检测USB盘符时出现问题。")
-            print(
-                "请插入已经制作好的U盘到计算机上，完成后按Enter键。\n" + "如果您没有制作好Ventoy引导U盘，请关闭程序，然后重新打开，重做以上的安装步骤。")
+            print("请插入已经制作好的U盘到计算机上，完成后按Enter键。\n"+"如果您没有制作好Ventoy引导U盘，请关闭程序，然后重新打开，重做以上的安装步骤。")
             rcmd("pause")
             continue
-        adprint("现在，请输入制作好usb引导的盘符，已经检测到的外置usb为 [ " + detectUsbPath() + " ]", 22)
+        adprint("现在，请输入制作好usb引导的盘符，已经检测到的外置usb为 [ " + detectUsbPath()+" ]", 22)
         adprint("Hint:制作好的U盘卷标名应该叫Ventoy", 33)
-        print("输入样例：  " + detectUsbPath())
+        print("输入样例：  "+detectUsbPath())
         detect = input()
         usb_path = ""
         if detect == "":
@@ -271,8 +222,8 @@ def main():
         adprint("无法解压！", 1)
         print("ErrorLoc:LOCAL_SOURCE_UNZIP_FAIL")
         adprint(
-            "请删除"+detectLocation()+"\\source\\compiled.7z"+"文件并检查您的系统环境是否异常并尝试重新通过安装向导或附带的光盘进行安装，或将其反馈给开发者，记得包括系统的详细信息。",
-            4)
+            "请检查您的系统环境是否异常并尝试重新通过安装向导或附带的光盘进行安装，或将其反馈给开发者，记得包括系统的详细信息。",
+            3)
         return 1
     rcmd("cls")
     adprint("成功安装！", 3)
@@ -343,7 +294,7 @@ def sh(command, print_msg=True):
     """
     p = subprocess.Popen(
         command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    # result = p.stdout.read().decode('utf-8')
+    #result = p.stdout.read().decode('utf-8')
     result = p.stdout.read().decode('gbk')
     if print_msg:
         print(result)

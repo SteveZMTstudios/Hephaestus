@@ -1,5 +1,18 @@
 ================
-
 注意：此程序依赖Python 3+版本运行。
 
 您可以先前往 python.org/downloads/ 先下载Python命令解释器，以节省您的时间。
+
+
+================
+[!] 安装Python时，请注意勾选“将Python.exe添加到PATH”复选框
+(Add python.exe to PATH)
+以确保程序能够正确调用（位于安装程序最底下的复选框）。
+
+
+================
+此程序完全免费并且开源，源代码存储库位于
+https://github.com/stevezmtstudios/Hephaestus
+同样镜像于
+https://gitee.com/stevezmtstudios/Hephaestus
+
