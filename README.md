@@ -1,4 +1,4 @@
-**简体中文** | [English(US)](https://github.com/SteveZMTstudios/Hephaestus/blob/main/README_EN.md)
+**简体中文** | [English (US)](https://github.com/SteveZMTstudios/Hephaestus/blob/main/README_EN.md)
 
 # Hephaestus 赫菲斯托斯
 A tool that make repairing school teaching computer easier.
@@ -7,6 +7,9 @@ A tool that make repairing school teaching computer easier.
 # Install 安装
 [usb安装器-Release](https://github.com/SteveZMTstudios/Hephaestus/releases)
 <br>联机安装包需要确保网络环境畅通。可能会不稳定。离线安装包可以在任何环境下运行，推荐使用离线安装包。
+<br>需要帮助? 访问[wiki 页面](https://github.com/SteveZMTstudios/Hephaestus/wiki)
+
+
 
 # Build 构建
 本程序采用源代码构建，因此您不需要编译python文件。
