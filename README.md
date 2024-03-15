@@ -1,4 +1,4 @@
-简体中文 | English(US)[not completed]
+**简体中文** | [English(US)](https://github.com/SteveZMTstudios/Hephaestus/blob/main/README_EN.md)
 
 # Hephaestus 赫菲斯托斯
 A tool that make repairing school teaching computer easier.
