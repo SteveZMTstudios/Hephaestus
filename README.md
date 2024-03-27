@@ -4,7 +4,15 @@
 A tool that make repairing school teaching computer easier.
 一个使维护学校教学计算机更容易的工具。
 
+![build status](https://img.shields.io/badge/build-passing-lightgreen?style=flat&logo=play&logoColor=white&label=build&labelColor=grey)
+![platform](https://img.shields.io/badge/platform-Windows-blue?style=flat&logoColor=white&label=platform&labelColor=grey)
+![Static Badge](https://img.shields.io/badge/compile_status-0_errors-green?style=flat&logoColor=white&label=compile&labelColor=grey)
+
+
 # Install 安装
+![Static Badge](https://img.shields.io/badge/Get_release-Here!-yellow?style=flat&logo=download&logoColor=white&labelColor=grey&link=https%3A%2F%2Fgithub.com%2FSteveZMTstudios%2FHephaestus%2Freleases)
+
+
 [usb安装器-Release](https://github.com/SteveZMTstudios/Hephaestus/releases)
 <br>联机安装包需要确保网络环境畅通。可能会不稳定。离线安装包可以在任何环境下运行，推荐使用离线安装包。
 <br>需要帮助? 访问[wiki 页面](https://github.com/SteveZMTstudios/Hephaestus/wiki)
