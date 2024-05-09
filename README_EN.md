@@ -2,6 +2,16 @@
 
 # Hephaestus
 A tool that make repairing school teaching computer easier.
+![build status](https://img.shields.io/badge/Build-Public_Archive-yellow?style=flat&logo=Github&logoColor=white&label=build&labelColor=grey)
+![platform](https://img.shields.io/badge/platform-Windows-blue?style=flat&logoColor=white&label=platform&labelColor=grey)
+![Static Badge](https://img.shields.io/badge/compile_status-Public_Archive-red?style=flat&logoColor=white&label=compile&labelColor=grey)
+
+# Stop Update Notice 
+> Οι θεοί έχουν ολοκληρωθούν. <br>
+> Dei sunt cecideri. <br>
+> The gods have fallen.
+
+[View details in Chinese](https://www.coolapk.com/feed/55461349?shareKey=NTg5NzdlYzgwNmI1NjYzYzkwMTA~&shareUid=22536770&shareFrom=com.coolapk.market_14.1.1)
 
 
 # Install
