@@ -4,9 +4,17 @@
 A tool that make repairing school teaching computer easier.
 一个使维护学校教学计算机更容易的工具。
 
-![build status](https://img.shields.io/badge/build-passing-lightgreen?style=flat&logo=play&logoColor=white&label=build&labelColor=grey)
+![build status](https://img.shields.io/badge/Build-Public_Archive-yellow?style=flat&logo=Github&logoColor=white&label=build&labelColor=grey)
 ![platform](https://img.shields.io/badge/platform-Windows-blue?style=flat&logoColor=white&label=platform&labelColor=grey)
-![Static Badge](https://img.shields.io/badge/compile_status-0_errors-green?style=flat&logoColor=white&label=compile&labelColor=grey)
+![Static Badge](https://img.shields.io/badge/compile_status-Public_Archive-red?style=flat&logoColor=white&label=compile&labelColor=grey)
+
+# Stop Update Notice 停止更新公示
+> Οι θεοί έχουν ολοκληρωθούν. <br>
+> Dei sunt cecideri. <br>
+> The gods have fallen.
+
+[查看详情](https://www.coolapk.com/feed/55461349?shareKey=NTg5NzdlYzgwNmI1NjYzYzkwMTA~&shareUid=22536770&shareFrom=com.coolapk.market_14.1.1)
+
 
 
 # Install 安装
